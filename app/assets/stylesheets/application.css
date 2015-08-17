@@ -14,18 +14,22 @@
  *= require_self
  */
 
-body {
-	background: url(http://i.imgur.com/T9XSIx7.png);
-}
+/* background image */
+	body {
+		background: url(http://i.imgur.com/T9XSIx7.png);
+	}
 
-body,p {
-  font-size: 16px;
-}
+/* font changes */
+	h1,p { 
+		font-family: 'Quicksand', Arial, sans-serif; font-weight: 400; 
+	}
 
+	p {
+		font-size: 16px;
+	}
 
-
-.large {
-  font-size: 20px; /* 125% of the baseline */
-}
+	.large {
+		font-size: 20px; /* 125% of the baseline */
+	}
 
 
