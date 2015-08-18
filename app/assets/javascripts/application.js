@@ -18,16 +18,6 @@
 
 $(document).ready(function (event){
 
-	// function moveMouth(){
-	//   $("#mouth").animate({
-	//   	"bottom": "+=-50px"
-	//   }, 300, function(){
-	//   	$("#mouth").animate({"bottom": "+=50px"}, 300);
-	//   });
-	// }
-
-	// $.when(mouthDown()).then(mouthUp());
-
 	function mouthDown(distance, time){
 	  $("#mouth").animate({"bottom": ("+=-" + distance + "px")}, time);
 	}
@@ -35,18 +25,23 @@ $(document).ready(function (event){
 		$("#mouth").animate({"bottom": "+=" + distance + "px"}, time);
 	}
 
-	setTimeout(function(){
-		$.when(mouthDown(10, 300)).then(mouthUp(10, 300));
-	}, 400);
-
 	$('.talkingHead').on('click', function (event){
-		function moveMouth(){
-			$.when(mouthDown(50, 300)).then(mouthUp(50, 300));				
+		function moveMouth(times){
+			var count = 0;
+			while (count < times){
+				$.when(mouthDown(50, 300)).then(mouthUp(50, 300));		
+				count++;
+			}	
 		}
-
-		$.when(moveMouth()).then(moveMouth()).then(moveMouth()).then(moveMouth());
+		moveMouth(3);
+		// $.when(moveMouth()).then(moveMouth()).then(moveMouth()).then(moveMouth());
+		// $.when(moveMouth());
 		// $.when.apply(null,[moveMouth(),moveMouth(),moveMouth(),moveMouth()]);
 	});
+
+	setTimeout(function(){
+		$.when(mouthDown(10, 300)).then(mouthUp(10, 300));
+	}, 400);	
 
 });
 
