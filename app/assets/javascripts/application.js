@@ -26,12 +26,19 @@ $(document).ready(function (event){
 	}
 
 	$('.talkingHead').on('click', function (event){
+
+
 		function moveMouth(times){
 			var count = 0;
+			if (count === 0){
+
+				$('.audio-play')[0].currentTime = 0;
+				$('.audio-play')[(Math.floor(Math.random() * 5) + 1)].play();
+			}
 			while (count < times){
-				$.when(mouthDown(50, 300)).then(mouthUp(50, 300));		
+				$.when(mouthDown(50, 300)).then(mouthUp(50, 300));
 				count++;
-			}	
+			}
 		}
 		moveMouth(3);
 	});
