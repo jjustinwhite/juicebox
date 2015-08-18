@@ -26,26 +26,53 @@ $(document).ready(function (event){
 	//   });
 	// }
 
-	// $.when(function1()).then(function2());
+	// $.when(mouthDown()).then(mouthUp());
 
-	function mouthDown(){
+	function mouthDown(distance, time){
+	  $("#mouth").animate({"bottom": ("+=-" + distance + "px")}, time);
+	}
+	function mouthUp(distance, time){
+		$("#mouth").animate({"bottom": "+=" + distance + "px"}, time);
+	}
 
-	}
-	function mouthUp(){
-		
-	}
-
-	function moveMouth(){
-	  $("#mouth").animate({
-	  	"bottom": "+=-50px"
-	  }, 300, function(){
-	  	$("#mouth").animate({"bottom": "+=50px"}, 300);
-	  });
-	}
+	setTimeout(function(){
+		$.when(mouthDown(10, 300)).then(mouthUp(10, 300));
+	}, 400);
 
 	$('.talkingHead').on('click', function (event){
-		moveMouth();
+		function moveMouth(){
+			$.when(mouthDown(50, 300)).then(mouthUp(50, 300));				
+		}
 
+		$.when(moveMouth()).then(moveMouth()).then(moveMouth()).then(moveMouth());
+		// $.when.apply(null,[moveMouth(),moveMouth(),moveMouth(),moveMouth()]);
 	});
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
