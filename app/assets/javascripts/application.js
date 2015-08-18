@@ -18,4 +18,34 @@
 
 $(document).ready(function (event){
 
+	// function moveMouth(){
+	//   $("#mouth").animate({
+	//   	"bottom": "+=-50px"
+	//   }, 300, function(){
+	//   	$("#mouth").animate({"bottom": "+=50px"}, 300);
+	//   });
+	// }
+
+	// $.when(function1()).then(function2());
+
+	function mouthDown(){
+
+	}
+	function mouthUp(){
+		
+	}
+
+	function moveMouth(){
+	  $("#mouth").animate({
+	  	"bottom": "+=-50px"
+	  }, 300, function(){
+	  	$("#mouth").animate({"bottom": "+=50px"}, 300);
+	  });
+	}
+
+	$('.talkingHead').on('click', function (event){
+		moveMouth();
+
+	});
+
 });
