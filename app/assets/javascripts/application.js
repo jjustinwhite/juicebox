@@ -34,9 +34,6 @@ $(document).ready(function (event){
 			}	
 		}
 		moveMouth(3);
-		// $.when(moveMouth()).then(moveMouth()).then(moveMouth()).then(moveMouth());
-		// $.when(moveMouth());
-		// $.when.apply(null,[moveMouth(),moveMouth(),moveMouth(),moveMouth()]);
 	});
 
 	setTimeout(function(){
