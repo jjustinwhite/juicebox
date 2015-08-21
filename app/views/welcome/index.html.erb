@@ -1,34 +1,32 @@
-<div class="row col-sm-6 col-sm-offset-3 text-center">
-	
+<div class="row col-sm-8 col-sm-offset-2 text-center">
 	<div>
-		<h1>Welcome to Juicebox</h1>
+		<h1>🍹 Welcome to Juicebox 🍹</h1>
 		<p>Hey are you juicin it?</p>
 		<!-- Nav Menu -->
 		<div class="col-sm-8 col-sm-offset-2">
 			<button class="btn btn-success btn-lg col-sm-6" type="button" data-toggle="modal" data-target="#juiceModal">
-			  Juice?
+			Juice?
 			</button>
 			<%= link_to "About", about_path, :class => "btn btn-info btn-lg col-sm-6" %> <br /><br /><br />
 		</div>
 	</div>
 
-	<div>
+	<div class="col-sm-12">
+		<p class="col-sm-12">🍹 You have 1 juice! 🍹</p>
 		<%= image_tag "juiceHeadTop.png", :class => "img-responsive img-rounded center-block talkingHead" %>
 		<%= image_tag "juiceHeadMouth.png", :id => "mouth", :class => "img-responsive img-rounded center-block talkingHead" %>
 	</div>
-
-	<div>
-		<p id="juiceCount">You have 1 juice!</p>
-	</div>
-	
 </div>
 
 
+<%= audio_tag("FlipFlap8.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
+<%= audio_tag("FlipFlap7.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
 <%= audio_tag("FlipFlap6.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
 <%= audio_tag("FlipFlap5.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
 <%= audio_tag("FlipFlap4.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
 <%= audio_tag("FlipFlap3.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
 <%= audio_tag("FlipFlap2.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
+<%= audio_tag("FlipFlap1.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
 
 		<!-- Modal -->
 		<div class="modal fade" id="juiceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

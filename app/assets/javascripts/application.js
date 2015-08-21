@@ -30,10 +30,11 @@ $(document).ready(function (event){
 
 		function moveMouth(times){
 			var count = 0;
+			var audioCount = 8; //number of audio clips in the welcome#index
 			if (count === 0){
 
 				$('.audio-play')[0].currentTime = 0;
-				$('.audio-play')[(Math.floor(Math.random() * 5) + 1)].play();
+				$('.audio-play')[(Math.floor(Math.random() * 8) + 1 )].play(); //between 1 & audioCount
 			}
 			while (count < times){
 				$.when(mouthDown(50, 300)).then(mouthUp(50, 300));
