@@ -18,11 +18,14 @@
 
 $(document).ready(function (event){
 
+
+
 	var fileCount = $('.audio-play').length; 
 	//preload all audio assets
 	for (i=0; i < fileCount; i++) {
 		$('.audio-play')[i].load();
 	}
+
 
 	function mouthDown(distance, time){
 	  $("#mouth").animate({"bottom": ("+=-" + distance + "px")}, time);
@@ -51,6 +54,38 @@ $(document).ready(function (event){
 		}
 		moveMouth(3);
 	});
+
+	
+
+	$('.FlipFlap1').on('click', function (event){
+		$('.audio-play')[0].play();
+	});
+	$('.FlipFlap2').on('click', function (event){
+		$('.audio-play')[1].play();
+	});
+	$('.FlipFlap3').on('click', function (event){
+		$('.audio-play')[2].play();
+	});
+	$('.FlipFlap4').on('click', function (event){
+		$('.audio-play')[3].play();
+	});
+	$('.FlipFlap5').on('click', function (event){
+		$('.audio-play')[4].play();
+	});
+	$('.FlipFlap6').on('click', function (event){
+		$('.audio-play')[5].play();
+	});
+	$('.FlipFlap7').on('click', function (event){
+		$('.audio-play')[6].play();
+	});
+	$('.FlipFlap8').on('click', function (event){
+		$('.audio-play')[7].play();
+	});
+
+
+
+
+
 
 	//small mouth movement when page loads
 	setTimeout(function(){

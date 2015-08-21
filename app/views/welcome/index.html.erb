@@ -29,10 +29,10 @@
 <div class="row well well-transparent">
 	<div class="col-md-6 col-md-offset-3">
 		<% @audioList.each do |fileName| %>
-			<div class="btn btn-primary col-xs-12 col-sm-6">
-				<i class="fa fa-play"></i> <%= fileName %>
-				<%= audio_tag(@baseURL+fileName, :class => "audio-play", preload: true, autobuffer: true, autoplay: false, controls: false, looping: false) %>
-			</div>
+			<%= button_tag(type: 'button', :class => "btn btn-primary col-xs-12 col-sm-6 #{fileName}") do %>
+				<i class="fa fa-play"></i> <%= content_tag(:strong, fileName) %>
+				<%= audio_tag(@baseURL+fileName+".mp3", :class => "audio-play #{fileName}",  preload: true, autobuffer: true, autoplay: false, controls: false, looping: false) %>
+			<% end %>
 		<% end %>
 	</div>
 </div>
