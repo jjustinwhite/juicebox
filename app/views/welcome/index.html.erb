@@ -23,7 +23,7 @@
 <!-- Hidden Elements-->
 
 	<% @audioList.each do |fileName| %>
-		<%= audio_tag(@baseURL+fileName, :class => "audio-play", autoplay: false, controls: false, looping: false) %>
+		<%= audio_tag(@baseURL+fileName, :class => "audio-play", preload: true, autoplay: false, controls: false, looping: false) %>
 	<% end %>
 
 	<!-- Modal -->
