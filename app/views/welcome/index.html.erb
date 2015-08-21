@@ -18,15 +18,9 @@
 	</div>
 </div>
 
-
-<%= audio_tag("FlipFlap8.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap7.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap6.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap5.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap4.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap3.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap2.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
-<%= audio_tag("FlipFlap1.mp3", :class => "audio-play", autoplay: false, controls: false, looping: false) %>
+	<% @audioList.each do |fileName| %>
+		<%= audio_tag(fileName, :class => "audio-play", autoplay: false, controls: false, looping: false) %>
+	<% end %>
 
 		<!-- Modal -->
 		<div class="modal fade" id="juiceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

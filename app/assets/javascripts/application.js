@@ -34,7 +34,7 @@ $(document).ready(function (event){
 			if (count === 0){
 
 				$('.audio-play')[0].currentTime = 0;
-				$('.audio-play')[(Math.floor(Math.random() * 8) + 1 )].play(); //between 1 & audioCount
+				$('.audio-play')[(Math.floor(Math.random() * 8))].play(); 
 			}
 			while (count < times){
 				$.when(mouthDown(50, 300)).then(mouthUp(50, 300));
