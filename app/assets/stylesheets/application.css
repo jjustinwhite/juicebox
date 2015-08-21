@@ -17,7 +17,15 @@
 /* background image http://i.imgur.com/T9XSIx7.png */
 	body {
 		background: url(http://i.imgur.com/InzuRuP.png);
+		padding-top: 30px;
 	}
+
+/* Well Changes */
+	.well-transparent {
+		background: rgba( 245, 245, 245, .96);
+		-webkit-transform: translate3d(0,0,0);
+	}
+
 
 /* font changes */
 	h1,p { 
