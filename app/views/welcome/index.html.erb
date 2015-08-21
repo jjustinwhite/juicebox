@@ -1,7 +1,10 @@
 <div class="row col-sm-8 col-sm-offset-2 text-center">
 	<div>
-		<h1>🍹 Welcome to Juicebox 🍹</h1>
-		<p>Hey are you juicin it?</p>
+		<h1>
+			Welcome to Juicebox <br />
+			<small>Hey are you juicin it?</small> 
+		</h1>
+		
 		<!-- Nav Menu -->
 		<div class="col-sm-8 col-sm-offset-2">
 			<button class="btn btn-success btn-lg col-sm-6" type="button" data-toggle="modal" data-target="#juiceModal">
@@ -23,7 +26,7 @@
 <!-- Hidden Elements-->
 
 	<% @audioList.each do |fileName| %>
-		<%= audio_tag(@baseURL+fileName, :class => "audio-play", preload: true, autoplay: false, controls: false, looping: false) %>
+		<%= audio_tag(@baseURL+fileName, :class => "audio-play", preload: true, autobuffer: true, autoplay: false, controls: false, looping: false) %>
 	<% end %>
 
 	<!-- Modal -->
