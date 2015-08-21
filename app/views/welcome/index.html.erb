@@ -1,33 +1,44 @@
-<div class="row col-sm-8 col-sm-offset-2 text-center">
-	<div>
+<div class="row well">	
+	<div class="row text-center">
 		<h1>
 			Welcome to Juicebox <br />
 			<small>Hey are you juicin it?</small> 
 		</h1>
 		
 		<!-- Nav Menu -->
-		<div class="col-sm-8 col-sm-offset-2">
-			<button class="btn btn-success btn-lg col-sm-6" type="button" data-toggle="modal" data-target="#juiceModal">
+		<div class="">
+			<button class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#juiceModal">
 				Juice?
 			</button>
-			<%= link_to "About", about_path, :class => "btn btn-info btn-lg col-sm-6" %> <br /><br /><br />
+			<%= link_to "About", about_path, :class => "btn btn-info btn-lg" %> <br /><br /><br />
 		</div>
 	</div>
 
-	<div class="col-sm-12">
-		<p class="col-sm-12">🍹 You have 1 juice! 🍹</p>
-		<%= image_tag "juiceHeadTop.png", :class => "img-responsive img-rounded center-block talkingHead" %>
-		<%= image_tag "juiceHeadMouth.png", :id => "mouth", :class => "img-responsive img-rounded center-block talkingHead" %>
+
+
+
+	<div class="row text-center">
+		<p class="large">🍹 You have 1 juice! 🍹</p>
+		<%= image_tag "juiceHeadTop.png", :class => "img-responsive center-block img-rounded talkingHead" %>
+		<%= image_tag "juiceHeadMouth.png", :id => "mouth", :class => "img-responsive center-block img-rounded talkingHead" %>
+	</div>
+
+
+</div>
+
+<div class="row well">
+	<div class="col-md-6 col-md-offset-3">
+		<% @audioList.each do |fileName| %>
+			<div class="btn btn-primary col-xs-12 col-sm-6">
+				<i class="fa fa-play"></i> <%= fileName %>
+				<%= audio_tag(@baseURL+fileName, :class => "audio-play", preload: true, autobuffer: true, autoplay: false, controls: false, looping: false) %>
+			</div>
+		<% end %>
 	</div>
 </div>
 
-
-
 <!-- Hidden Elements-->
 
-	<% @audioList.each do |fileName| %>
-		<%= audio_tag(@baseURL+fileName, :class => "audio-play", preload: true, autobuffer: true, autoplay: false, controls: false, looping: false) %>
-	<% end %>
 
 	<!-- Modal -->
 	<div class="modal fade" id="juiceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
